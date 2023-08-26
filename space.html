@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shooting Stars</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+    canvas {
+      background: #000;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    function createStar() {
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      const speed = Math.random() * 5 + 1;
+      stars.push({x, y, speed});
+    }
+
+    function drawStar(star) {
+      ctx.fillStyle = '#FFF';
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, 2, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.closePath();
+    }
+
+    function updateStar(star) {
+      star.x += star.speed;
+      if (star.x > canvas.width) {
+        star.x = 0;
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      stars.forEach(star => {
+        drawStar(star);
+        updateStar(star);
+      });
+
+      requestAnimationFrame(draw);
+    }
+
+    function init() {
+      resizeCanvas();
+      for (let i = 0; i < 100; i++) {
+        createStar();
+      }
+      draw();
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('load', init);
+  </script>
+</body>
+</html>
