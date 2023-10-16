@@ -197,4 +197,17 @@ nav a:hover::before {
   background-color: #3a539b;
 }
 
+header {
+    /* ... other header styles ... */
+    position: relative;  /* Ensure the header has a relative position */
+}
+
+#toggleButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;  /* Optional: add some padding */
+}
+
+
 /*# sourceMappingURL=style.css.map */
