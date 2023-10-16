@@ -209,5 +209,15 @@ header {
     padding: 10px;  /* Optional: add some padding */
 }
 
+[data-theme="dark"] {
+    background-color: #333;
+    color: #fff;
+}
+
+[data-theme="light"] {
+    background-color: #fff;
+    color: #000;
+}
+
 
 /*# sourceMappingURL=style.css.map */
