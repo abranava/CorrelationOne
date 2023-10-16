@@ -219,5 +219,16 @@ header {
     color: #000;
 }
 
+/* Styles for Dark Theme */
+[data-theme="dark"] body {
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    color: #fff;  /* Adjust text color for dark theme if necessary */
+}
+
+/* Styles for Light Theme */
+[data-theme="light"] body {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);  /* Example light theme gradient */
+    color: #000;  /* Adjust text color for light theme if necessary */
+}
 
 /*# sourceMappingURL=style.css.map */
