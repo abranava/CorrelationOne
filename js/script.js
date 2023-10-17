@@ -6,10 +6,12 @@ toggleButton.addEventListener('click', () => {
 });
 // Add an event listener to trigger the effect when the page loads
 document.addEventListener('DOMContentLoaded', function () {
-    // Select the section to animate
-    const section = document.querySelector('.section');
+    // Select all sections on the page
+    const sections = document.querySelectorAll('section');
     
-    // Apply the fade-and-slide-in effect
-    section.style.opacity = '1';
-    section.style.transform = 'translateY(0)';
+    // Loop through each section and apply the fade-and-slide-in effect
+    sections.forEach(section => {
+        section.style.opacity = '1';
+        section.style.transform = 'translateY(0)';
+    });
 });
