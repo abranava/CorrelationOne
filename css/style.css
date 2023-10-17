@@ -251,7 +251,6 @@ header {
 }
 
 /* Define initial styles for the section */
-/* Define initial styles for the section */
 .section {
     opacity: 0; /* Initial opacity set to 0 for the fade-in effect */
     transform: translateY(20px); /* Initial vertical translation for the slide-in effect */
