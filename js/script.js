@@ -13,5 +13,5 @@ document.addEventListener('DOMContentLoaded', function () {
       section.style.opacity = '1';
       section.style.transform = 'translateY(0)';
     });
-  }, 100); // Change 100 to control the delay, in milliseconds
+  }, 1000); // Change 100 to control the delay, in milliseconds
 });
