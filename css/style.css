@@ -250,18 +250,12 @@ header {
     height: auto;
 }
 
-/* Define initial styles for the section */
-.blog-post, .section {
-    opacity: 0; /* Initial opacity set to 0 for the fade-in effect */
-    transform: translateY(20px); /* Initial vertical translation for the slide-in effect */
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transition properties */
-    /* You can add more custom styles here */
-    background-color: #f0f0f0; /* Change the background color */
-    color: #333; /* Change the text color */
-    padding: 20px; /* Add some padding */
-    border-radius: 5px; /* Add rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a box shadow */
+.fade-slide-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
+
 
 
 
