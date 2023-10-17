@@ -7,7 +7,7 @@ toggleButton.addEventListener('click', () => {
 // Add an event listener to trigger the effect when the page loads
 document.addEventListener('DOMContentLoaded', function () {
     // Select all sections on the page
-    const sections = document.querySelectorAll('section');
+    const sections = document.querySelectorAll('.blog-post, .section');
     
     // Loop through each section and apply the fade-and-slide-in effect
     sections.forEach(section => {
