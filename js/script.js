@@ -6,9 +6,10 @@ toggleButton.addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  const sections = document.querySelectorAll('.fade-slide-section');
+  const sections = document.querySelectorAll('.resume-section, .introduction, .about-me, .site-description, .blog-post, .call-to-action');
   sections.forEach(section => {
     section.style.opacity = '1';
     section.style.transform = 'translateY(0)';
   });
 });
+
