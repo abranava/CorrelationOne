@@ -63,7 +63,7 @@ nav {
   }
 }
 header {
-  background-image: url("/media/fam.jpg");
+  background-image: url("../media/fam.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-attachment: fixed;
