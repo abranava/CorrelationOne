@@ -258,6 +258,33 @@ header {
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
+/* Additions for form validation styles */
+input:invalid, textarea:invalid {
+  border: 2px solid red;
+}
+
+input:valid, textarea:valid {
+  border: 2px solid green;
+}
+
+.error-message {
+  display: none; /* Hide error messages by default */
+  color: red;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+#successMessage {
+  display: none; /* Hide success message by default */
+  color: green;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 
 
 
