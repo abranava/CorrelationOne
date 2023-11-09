@@ -80,12 +80,26 @@
       </form><br></br>
       <section class="contact-me"- id="contact">
         <h2>Contact Me</h2>
-        <form action="/send-message" method="post">
-          <input type="text" name="name" placeholder="Your Name" required><br>
-          <input type="email" name="email" placeholder="Your Email" required><br>
-          <textarea name="message" placeholder="Your Message" required></textarea><br>
-          <button type="submit">Send Message</button>
-        </form>
+	<form id="contactForm" novalidate>
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required minlength="3">
+    <span class="error-message" hidden>Please enter at least 3 characters.</span>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <span class="error-message" hidden>Please enter a valid email address.</span>
+  </div>
+  <div>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required minlength="10"></textarea>
+    <span class="error-message" hidden>Please enter at least 10 characters.</span>
+  </div>
+  <button type="submit" id="submitBtn" disabled>Submit</button>
+  <p id="successMessage" hidden>Your message has been sent successfully!</p>
+</form>
+	      
       </section>
     </section><br></br>
     <div class=connect align="center">
