@@ -275,10 +275,15 @@ input:valid, textarea:valid {
 }
 
 #successMessage {
-  display: none; /* Hide success message by default */
-  color: green;
+  display: none; /* Hide by default, show on successful form submission */
+  background-color: rgba(0, 255, 0, 0.2); /* Semi-transparent green background */
+  color: green; /* Text color */
   font-size: 1em;
   margin-top: 10px;
+  padding: 10px;
+  border: 1px solid green; /* Optional: adds a thin green border */
+  border-radius: 5px; /* Optional: rounds the corners of the border */
+  text-align: center; /* Centers the text within the message box */
 }
 
 button[disabled] {
