@@ -80,25 +80,26 @@
       </form><br></br>
       <section class="contact-me"- id="contact">
         <h2>Contact Me</h2>
+	      
 	<form id="contactForm" novalidate>
-  <div>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required minlength="3">
-    <span class="error-message" hidden>Please enter at least 3 characters.</span>
-  </div>
-  <div>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-    <span class="error-message" hidden>Please enter a valid email address.</span>
-  </div>
-  <div>
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" required minlength="10"></textarea>
-    <span class="error-message" hidden>Please enter at least 10 characters.</span>
-  </div>
-  <button type="submit" id="submitBtn" disabled>Submit</button>
-  <p id="successMessage" hidden>Your message has been sent successfully!</p>
+  <form id="contactForm" novalidate>
+  <div id="successMessage" style="display:none; color: green;">Your message has been sent successfully!</div>
+  
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+  <span class="error-message" style="display:none; color: red;">Please enter your name.</span>
+  
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+  <span class="error-message" style="display:none; color: red;">Please enter a valid email address.</span>
+  
+  <label for="message">Message:</label>
+  <textarea id="message" name="message" required></textarea>
+  <span class="error-message" style="display:none; color: red;">Please enter your message.</span>
+  
+  <button type="submit" id="submitBtn">Submit</button>
 </form>
+
 	      
       </section>
     </section><br></br>
