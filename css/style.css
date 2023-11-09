@@ -277,7 +277,7 @@ input:valid, textarea:valid {
 #successMessage {
   display: none; /* Hide by default, show on successful form submission */
   background-color: rgba(0, 255, 0, 0.2); /* Semi-transparent green background */
-  color: green; /* Text color */
+  color: black; /* Text color */
   font-size: 1em;
   margin-top: 10px;
   padding: 10px;
