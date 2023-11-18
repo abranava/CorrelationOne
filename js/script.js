@@ -5,6 +5,34 @@ toggleButton.addEventListener('click', () => {
     document.documentElement.setAttribute('data-theme', newTheme);
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize the map on Paris
+    var map = L.map('map').setView([48.8566, 2.3522], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Eiffel Tower Marker
+    var eiffelTower = L.marker([48.8584, 2.2945]).addTo(map);
+    eiffelTower.bindPopup("<b>Eiffel Tower</b><br>Iconic Parisian landmark.");
+
+    // Louvre Museum Marker
+    var louvreMuseum = L.marker([48.8606, 2.3376]).addTo(map);
+    louvreMuseum.bindPopup("<b>Louvre Museum</b><br>World's largest art museum.");
+
+    // Circle for a nearby area to visit around Eiffel Tower
+    var circle = L.circle([48.8584, 2.2945], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 500 // Radius in meters
+    }).addTo(map);
+    circle.bindPopup("Area to explore near the Eiffel Tower.");
+});
+
+
 document.addEventListener('DOMContentLoaded', function () {
   const sections = document.querySelectorAll('.resume-section, .introduction, .about-me, .site-description, .blog-post, .call-to-action');
   
@@ -46,12 +74,32 @@ document.addEventListener('DOMContentLoaded', function () {
     checkInputValidity();
   });
 
-  form.addEventListener('submit', function (event) {
+form.addEventListener('submit', function (event) {
     event.preventDefault();
     if (checkInputValidity()) {
-      // Assuming here you would normally have code to actually submit the form
-      // For example, via AJAX or by sending it to a server-side script
-      successMessage.style.display = 'block';
+        // AJAX request to submit the form data to Slack webhook
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK', true); //ADJUST SLACK WEBHOOK
+        xhr.setRequestHeader('Content-Type', 'application/json');
+
+        xhr.onreadystatechange = function() {
+            if (this.readyState === XMLHttpRequest.DONE) {
+                if (this.status === 200) {
+                    // Handle successful submission here
+                    successMessage.style.display = 'block';
+                } else {
+                    // Handle errors here
+                    console.error('Slack webhook error:', this.status, this.responseText);
+                }
+            }
+        };
+
+        var formData = {
+            text: `New submission from the website:\nName: ${nameInput.value}\nEmail: ${emailInput.value}\nMessage: ${messageInput.value}`
+        };
+        
+        xhr.send(JSON.stringify(formData));
     }
-  });
+});
+
 });
