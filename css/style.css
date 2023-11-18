@@ -286,6 +286,12 @@ input:valid, textarea:valid {
   text-align: center; /* Centers the text within the message box */
 }
 
+#map {
+    height: 400px; /* Leaflet Map, Adjust as needed */
+    width: 100%; 
+}
+
+
 button[disabled] {
   opacity: 0.5;
   cursor: not-allowed;
